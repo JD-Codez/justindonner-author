@@ -39,7 +39,6 @@
       overflow-x: hidden;
     }
 
-    /* Noise overlay for texture */
     body::before {
       content: '';
       position: fixed;
@@ -61,7 +60,6 @@
       color: #e03a55;
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -103,7 +101,6 @@
       color: var(--text);
     }
 
-    /* Hero */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -118,8 +115,8 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('justin_donner_pic2.jpg') center 30% / cover no-repeat;
-      filter: brightness(0.45) contrast(1.15) saturate(0.9);
+      background: url('justin_donner5.jpg') center 20% / cover no-repeat;
+      filter: brightness(0.4) contrast(1.1) saturate(0.85);
       z-index: 0;
     }
 
@@ -202,7 +199,6 @@
       box-shadow: none;
     }
 
-    /* Sections */
     section {
       padding: 5rem 1.5rem;
       max-width: 1100px;
@@ -233,7 +229,6 @@
       margin: 0 0 2rem;
     }
 
-    /* About Book */
     .book-grid {
       display: grid;
       grid-template-columns: 1fr 1.4fr;
@@ -271,7 +266,6 @@
       font-size: 1.15rem;
     }
 
-    /* Excerpt */
     .excerpt {
       background: var(--bg-card);
       border-left: 3px solid var(--accent);
@@ -308,7 +302,6 @@
       font-family: 'Inter', sans-serif;
     }
 
-    /* Reviews */
     .reviews-grid {
       display: grid;
       gap: 1.75rem;
@@ -352,7 +345,6 @@
       margin-top: 0.25rem;
     }
 
-    /* Author */
     .author-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -371,7 +363,6 @@
       font-size: 1.05rem;
     }
 
-    /* Gallery */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -392,7 +383,6 @@
       transform: scale(1.02);
     }
 
-    /* CTA / Buy */
     .cta {
       text-align: center;
       padding: 5rem 1.5rem;
@@ -414,7 +404,6 @@
       justify-content: center;
     }
 
-    /* Footer */
     footer {
       padding: 3rem 1.5rem;
       text-align: center;
@@ -428,7 +417,6 @@
       font-size: 1.1rem;
     }
 
-    /* Responsive */
     @media (max-width: 800px) {
       .book-grid,
       .author-grid {
@@ -459,11 +447,10 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <div class="hero-tag">A Memoir of Addiction &amp; Recovery</div>
+      <div class="hero-tag">A Memoir of Addiction & Recovery</div>
       <h1>I Just Woke Up Dead<br><em>hell / highs / hope</em></h1>
       <p class="hero-sub">An unflinching examination of addiction, mental illness, and domestic violence — told with rare clarity by someone who lived it.</p>
       <div>
@@ -473,7 +460,6 @@
     </div>
   </header>
 
-  <!-- THE BOOK -->
   <section id="book">
     <div class="section-label">The Book</div>
     <h2>Wake up from the blackout.</h2>
@@ -484,7 +470,7 @@
         <img src="justin_donner_arms.jpg" alt="Justin Donner – Author of I Just Woke Up Dead">
         <div class="book-meta">
           <strong>Published February 2014</strong>
-          566 pages · Paperback &amp; Ebook<br>
+          566 pages · Paperback & Ebook<br>
           Also available as Audiobook (2025)
         </div>
       </div>
@@ -503,7 +489,6 @@
     </div>
   </section>
 
-  <!-- REVIEWS -->
   <section id="reviews">
     <div class="section-label">What Readers Say</div>
     <h2>Reviews</h2>
@@ -540,14 +525,13 @@
     </div>
   </section>
 
-  <!-- AUTHOR -->
   <section id="author">
     <div class="section-label">The Author</div>
     <h2>Justin Donner</h2>
     <div class="divider"></div>
 
     <div class="author-grid">
-      <img src="justin_donner_pic1.jpg" alt="Justin Donner" class="author-photo">
+      <img src="justin_donner_pic8.jpg" alt="Justin Donner" class="author-photo">
       <div class="author-bio">
         <p>Originally way back from County Donegal, Ireland, the great grandson of an Irish patriot, Justin is an elder millennial father of an amazing kid known as Corrigan.</p>
         <p>After many travels from the Bellingham bay to the barns of North Dakota and back to the beaches of Oceanside, California — academia to addiction — days are now spent trying to be better than yesterday to help somebody else.</p>
@@ -556,22 +540,14 @@
     </div>
 
     <div class="gallery">
-      <img src="justin_donner_pic3.jpg" alt="Justin Donner at the piano">
-      <img src="justin_donner_pic4.jpg" alt="Justin Donner in city loft">
-      <img src="justin_donner_pic5.jpg" alt="Justin Donner in suit">
-      <img src="justin_donner_pic6.jpg" alt="Justin Donner at the pool">
-      <img src="justin_donner_pic7.jpg" alt="Justin Donner cooking">
-      <img src="justin_donner_pic9.jpg" alt="Justin Donner sunglasses">
       <img src="justin_donner_train.jpg" alt="Justin Donner at train station">
       <img src="justin_donner_car.jpg" alt="Justin Donner night drive">
       <img src="justin_donner_mirror.jpg" alt="Justin Donner mirror selfie">
       <img src="justin_donner_sonics.jpg" alt="Justin Donner Sonics jersey">
-      <img src="justin_donner_pic8.jpg" alt="Justin Donner city backdrop">
       <img src="justin_donner5.jpg" alt="Justin Donner NY hat">
     </div>
   </section>
 
-  <!-- GET THE BOOK -->
   <div class="cta" id="get">
     <div class="section-label">Available Now</div>
     <h2>Start reading.</h2>
