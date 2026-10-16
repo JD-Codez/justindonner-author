@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Donner | I Just Woke Up Dead</title>
+  <meta name="description" content="Official site for Justin Donner, author of the raw addiction memoir I Just Woke Up Dead: Hell / Highs / Hope. A case study of millennial addiction, mental illness, and recovery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #141414;
+      --bg-elevated: #1c1c1c;
+      --text: #e8e6e3;
+      --text-muted: #9a9690;
+      --accent: #c41e3a;
+      --accent-dim: #8b1a2b;
+      --border: #2a2a2a;
+      --glow: rgba(196, 30, 58, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Noise overlay for texture */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #e03a55;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('justin_donner5.jpg') center 20% / cover no-repeat;
+      filter: brightness(0.35) contrast(1.1) saturate(0.8);
+      z-index: 0;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 70%, var(--bg) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #e03a55;
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px var(--glow);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      margin-left: 1rem;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: transparent;
+      box-shadow: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      margin: 0 0 2rem;
+    }
+
+    /* About Book */
+    .book-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .book-cover-wrap {
+      position: relative;
+    }
+    .book-cover-wrap img {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      filter: brightness(0.9);
+    }
+    .book-meta {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .book-meta strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .book-desc p {
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+    .book-desc p:first-of-type {
+      color: var(--text);
+      font-size: 1.15rem;
+    }
+
+    /* Excerpt */
+    .excerpt {
+      background: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      padding: 2.5rem;
+      margin: 3rem 0;
+      position: relative;
+    }
+    .excerpt::before {
+      content: '"';
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--accent-dim);
+      position: absolute;
+      top: 0.5rem;
+      left: 1.25rem;
+      line-height: 1;
+      opacity: 0.5;
+    }
+    .excerpt p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
+    }
+    .excerpt cite {
+      display: block;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      font-style: normal;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      gap: 1.75rem;
+    }
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .review-card:hover {
+      border-color: var(--accent-dim);
+    }
+    .review-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card));
+      box-shadow: 0 0 40px var(--glow);
+    }
+    .stars {
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .review-card p {
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.65;
+    }
+    .review-card .reviewer {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .review-card .source {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      margin-top: 0.25rem;
+    }
+
+    /* Author */
+    .author-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .author-photo {
+      width: 100%;
+      border-radius: 4px;
+      filter: brightness(0.85) contrast(1.05);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .author-bio p {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      font-size: 1.05rem;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 3px;
+      filter: brightness(0.8) contrast(1.05);
+      transition: filter 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      filter: brightness(0.95);
+      transform: scale(1.02);
+    }
+
+    /* CTA / Buy */
+    .cta {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(to bottom, var(--bg), #0f0a0a);
+      border-top: 1px solid var(--border);
+    }
+    .cta h2 {
+      margin-bottom: 0.75rem;
+    }
+    .cta p {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+    .buy-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer .logo {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .book-grid,
+      .author-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 0.75rem;
+      }
+      .hero {
+        min-height: 90vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">Justin <span>Donner</span></a>
+    <ul class="nav-links">
+      <li><a href="#book">The Book</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#author">Author</a></li>
+      <li><a href="#get">Get the Book</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-tag">A Memoir of Addiction &amp; Recovery</div>
+      <h1>I Just Woke Up Dead<br><em>hell / highs / hope</em></h1>
+      <p class="hero-sub">An unflinching examination of addiction, mental illness, and domestic violence — told with rare clarity by someone who lived it.</p>
+      <div>
+        <a href="#get" class="btn">Get the Book</a>
+        <a href="#book" class="btn btn-outline">Read More</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- THE BOOK -->
+  <section id="book">
+    <div class="section-label">The Book</div>
+    <h2>Wake up from the blackout.</h2>
+    <div class="divider"></div>
+
+    <div class="book-grid">
+      <div class="book-cover-wrap">
+        <img src="justin_donner_8.jpg" alt="Justin Donner – Author of I Just Woke Up Dead">
+        <div class="book-meta">
+          <strong>Published February 2014</strong>
+          566 pages · Paperback &amp; Ebook<br>
+          Also available as Audiobook (2025)
+        </div>
+      </div>
+      <div class="book-desc">
+        <p>An examination of addiction, mental illness and domestic violence unlike any other. <em>ijwd</em> was compiled using a lifetime collection of journals, notes, photos, arrest records, hospital documents, and candid conversations with those involved in the self-destruction contained herein.</p>
+        <p>As much a research project as a memoir (written by an author with a master’s degree from Cal Irvine and an extensive background in research writing), details and perspective never found in domestic violence, addiction or mental health literature are recounted in a way that will relate to addicts, enlighten professionals, and educate the loved ones who watch lives fall apart.</p>
+        <p>Wake up from the blackout, bloodied, bruised, in detox on a police hold. No clue. In PART 1, readers participate in the unraveling of sexual, sometimes violent intoxicated events countless addicts endure daily. This narrative puts the reader at the high point of college success, earning top-school billing as a pre-med student… then the sharp fall.</p>
+        <p>PART 1 compares top from bottom, while PARTS 2 and 3 take readers on an exploratory journey to show, not tell, but live through what could possibly derail a bright future while the soul-searching path to recovery is told through psychiatric hospital walls and a rehabilitation center.</p>
+      </div>
+    </div>
+
+    <div class="excerpt">
+      <p>Observe the origins and progression of addiction as a disease stripping away ambition and replacing it with maddening self-destruction. Medical school pressure and the rapid spiral which begins without warning, cunning, clever and chaotic are depicted without apology.</p>
+      <p>Wake up from the nightmare, try to piece together the facts, understand the blackout, blood and bruises. See what happens, feel the agony and horror first hand as rock bottom is found repeatedly.</p>
+      <cite>— from I Just Woke Up Dead</cite>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="section-label">What Readers Say</div>
+    <h2>Reviews</h2>
+    <div class="divider"></div>
+
+    <div class="reviews-grid">
+      <div class="review-card featured">
+        <div class="stars">★★★★★</div>
+        <p>“Justin Donner’s I Just Woke Up Dead is one of the best books I have ever read in my life. It’s been a few days since I finished I Just Woke Up Dead and I still don’t feel ready to read another book. I can’t move on yet. There are many books that I love but never have I read a book that has grasped my soul as tightly as this memoir.”</p>
+        <div class="reviewer">Hannah D. Bowman</div>
+        <div class="source">Amazon Customer Review</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>“What a ride…. This book really made me think. I loved it! I’m adding it to my favorite books. I personally think that having the storyline of the recovery alongside the storyline of the ruin of Mr. Justin Donner was genius. What a brutally honest book to write. … I would recommend this book wholeheartedly!”</p>
+        <div class="reviewer">Scarlett O.H.</div>
+        <div class="source">Goodreads</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>“Excellent read. The bravery in your life story that’s so raw and truthfully told is admirable. I couldn’t put this book down.”</p>
+        <div class="reviewer">Amazon Customer</div>
+        <div class="source">Amazon · 4.0 average from 100+ ratings</div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>“It was well written, well researched, very informative, and eye-opening. … Overall, I’m giving this book 4 out of 5 stars.”</p>
+        <div class="reviewer">Shey Saints</div>
+        <div class="source">Goodreads</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section id="author">
+    <div class="section-label">The Author</div>
+    <h2>Justin Donner</h2>
+    <div class="divider"></div>
+
+    <div class="author-grid">
+      <img src="justin_donner_8.jpg" alt="Justin Donner" class="author-photo">
+      <div class="author-bio">
+        <p>Originally way back from County Donegal, Ireland, the great grandson of an Irish patriot, Justin is an elder millennial father of an amazing kid known as Corrigan.</p>
+        <p>After many travels from the Bellingham bay to the barns of North Dakota and back to the beaches of Oceanside, California — academia to addiction — days are now spent trying to be better than yesterday to help somebody else.</p>
+        <p>He holds a master’s degree from Cal Irvine and writes with the dual perspective of someone who has lived the chaos and studied it. His work sits at the intersection of memoir, case study, and unflinching honesty about mental illness, addiction, and the long road back.</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <img src="justin_donner5.jpg" alt="Justin Donner">
+      <img src="justin_donner4.jpg" alt="Justin Donner">
+      <img src="justin_donner1.jpg" alt="Justin Donner">
+      <img src="justin_donner_6.jpg" alt="Justin Donner">
+      <img src="justin_donner2.jpg" alt="Justin Donner">
+      <img src="justin_donner_9.jpg" alt="Justin Donner">
+    </div>
+  </section>
+
+  <!-- GET THE BOOK -->
+  <div class="cta" id="get">
+    <div class="section-label">Available Now</div>
+    <h2>Start reading.</h2>
+    <p>Paperback, ebook, and audiobook. Experience the story that readers say they can’t move on from.</p>
+    <div class="buy-links">
+      <a href="https://www.amazon.com/just-woke-dead-hell-highs/dp/1517667275" class="btn" target="_blank" rel="noopener">Amazon Paperback</a>
+      <a href="https://www.amazon.com/just-woke-dead-alcohol-addiction/dp/B0F77WP741" class="btn btn-outline" target="_blank" rel="noopener">Audible Audiobook</a>
+      <a href="https://www.goodreads.com/book/show/28154683-i-just-woke-up-dead" class="btn btn-outline" target="_blank" rel="noopener">Goodreads</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="#" class="logo">Justin <span>Donner</span></a>
+    <p>© 2026 Justin Donner. All rights reserved.<br>
+    Author of <em>I Just Woke Up Dead</em> · hell / highs / hope</p>
+    <p style="margin-top: 1rem; font-size: 0.8rem;">
+      For rights, media, or speaking inquiries: reach out via Amazon author page or Goodreads.
+    </p>
+  </footer>
+</body>
+</html>
