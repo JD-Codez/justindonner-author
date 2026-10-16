@@ -115,8 +115,8 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url('justin_donner5.jpg') center 20% / cover no-repeat;
-      filter: brightness(0.4) contrast(1.1) saturate(0.85);
+      background: url('justin_donner_car.jpg') center 30% / cover no-repeat;
+      filter: brightness(0.45) contrast(1.15) saturate(0.9);
       z-index: 0;
     }
 
@@ -365,9 +365,17 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       margin-top: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (min-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
     .gallery img {
       width: 100%;
@@ -541,7 +549,6 @@
 
     <div class="gallery">
       <img src="justin_donner_train.jpg" alt="Justin Donner at train station">
-      <img src="justin_donner_car.jpg" alt="Justin Donner night drive">
       <img src="justin_donner_mirror.jpg" alt="Justin Donner mirror selfie">
       <img src="justin_donner_sonics.jpg" alt="Justin Donner Sonics jersey">
       <img src="justin_donner5.jpg" alt="Justin Donner NY hat">
